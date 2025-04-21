@@ -1,0 +1,341 @@
+<form
+  formGroup="laptopForm"
+  (ngSubmit)="OnSubmit()"
+  class="emp-form"
+>
+  <div class="form-display-spacing">
+    <!-- First Row: Initials and Full Names, Surname and gender -->
+    <section class="form-display-grid">
+      <div>
+        <!-- Initials -->
+        <label class="fluid-label" for="initials">Initials</label>
+        <input id="initials" formControlName="initials" class="form-input" />
+        <div
+          *ngIf="
+            laptopForm.get('initials')?.touched &&
+            laptopForm.get('initials')?.invalid
+          "
+        >
+          <small class="text-red-500">Initials are required.</small>
+        </div>
+      </div>
+
+      <div>
+        <!-- Full Names -->
+        <label class="fluid-label" for="fullNames">Full Names</label>
+        <input id="fullNames" formControlName="fullNames" class="form-input" />
+        <div
+          *ngIf="
+            laptopForm.get('fullNames')?.touched &&
+            laptopForm.get('fullNames')?.invalid
+          "
+        >
+          <small class="text-red-500">Full Names are required.</small>
+        </div>
+      </div>
+
+      <!-- Surname and Gender -->
+      <div>
+        <!-- Surname -->
+        <label class="fluid-label" for="surname">Surname</label>
+        <input id="surname" formControlName="surname" class="form-input" />
+        <div
+          *ngIf="
+            laptopForm.get('surname')?.touched &&
+            laptopForm.get('surname')?.invalid
+          "
+        >
+          <small class="text-red-500">Surname is required.</small>
+        </div>
+      </div>
+
+      <div>
+        <!-- Gender -->
+        <label class="fluid-label" for="gender">Gender</label>
+        <input id="gender" formControlName="gender" class="form-input" />
+        <div
+          *ngIf="
+            laptopForm.get('gender')?.touched &&
+            laptopForm.get('gender')?.invalid
+          "
+        >
+          <small class="text-red-500">Gender is required.</small>
+        </div>
+      </div>
+    </section>
+    <!-- Second Row: Business Unit, Component Description,Organisation Description and Post Job Title Description -->
+    <section class="form-display-grid">
+      <div>
+        <!-- Business Unit -->
+        <label class="fluid-label" for="businessUnit">Business Unit</label>
+        <input
+          id="businessUnit"
+          formControlName="businessUnit"
+          class="form-input"
+        />
+        <div
+          *ngIf="
+            laptopForm.get('businessUnit')?.touched &&
+            laptopForm.get('businessUnit')?.invalid
+          "
+        >
+          <small class="text-red-500">Business Unit is required.</small>
+        </div>
+      </div>
+
+      <div>
+        <!-- Component Description -->
+        <label class="fluid-label" for="componentDescription"
+          >Component</label
+        >
+        <input
+          id="componentDescription"
+          formControlName="componentDescription"
+          class="form-input"
+        />
+        <div
+          *ngIf="
+            laptopForm.get('componentDescription')?.touched &&
+            laptopForm.get('componentDescription')?.invalid
+          "
+        >
+          <small class="text-red-500">Component Description is required.</small>
+        </div>
+      </div>
+
+      <div>
+        <!-- Organisation Description -->
+        <label class="fluid-label" for="organisationDescription"
+          >Organisation</label
+        >
+        <input
+          id="organisationDescription"
+          formControlName="organisationDescription"
+          class="form-input"
+        />
+        <div
+          *ngIf="
+            laptopForm.get('organisationDescription')?.touched &&
+            laptopForm.get('organisationDescription')?.invalid
+          "
+        >
+          <small class="text-red-500"
+            >Organisation Description is required.</small
+          >
+        </div>
+      </div>
+
+      <div>
+        <!-- Post Job Title Description -->
+        <label class="fluid-label" for="postJobTitleDescription"
+          >Post Job Title </label
+        >
+        <input
+          id="postJobTitleDescription"
+          formControlName="postJobTitleDescription"
+          class="form-input"
+        />
+        <div
+          *ngIf="
+            laptopForm.get('postJobTitleDescription')?.touched &&
+            laptopForm.get('postJobTitleDescription')?.invalid
+          "
+        >
+          <small class="text-red-500"
+            >Post Job Title Description is required.</small
+          >
+        </div>
+      </div>
+    </section>
+    <!--Third Row: Post Stat, Post Type,Persal N.o and Computer Name -->
+    <section class="form-display-grid">
+      <div>
+        <!--Post Stat-->
+        <label class="fluid-label" for="postStatusDescription"
+          >Post Status</label
+        >
+        <input
+          id="postStatusDescription"
+          formControlName="postStatusDescription" class="form-input"
+        />
+        <div
+          *ngIf="
+            laptopForm.get('postStatusDescription')?.touched &&
+            laptopForm.get('postStatusDescription')?.invalid
+          "
+        >
+          <small class="error">Post Status Description is required.</small>
+        </div>
+      </div>
+      <div>
+        <!--Post Type-->
+        <label class="fluid-label" for="postTypeDescription">Post Type</label>
+        <input id="postTypeDescription" formControlName="postTypeDescription" class="form-input" />
+        <div
+          *ngIf="
+            laptopForm.get('postTypeDescription')?.touched &&
+            laptopForm.get('postTypeDescription')?.invalid
+          "
+        >
+          <small class="error">Post Type Description is required.</small>
+        </div>
+      </div>
+      <div>
+        <!--Persal N.O-->
+        <label class="fluid-label" for="persalNumber">PERSAL N.O</label>
+        <input id="persalNumber" formControlName="persalNumber" type="text" class="form-input" />
+        <div *ngIf="laptopForm.get('persalNumber')?.touched">
+          <small
+            class="error"
+            *ngIf="laptopForm.get('persalNumber')?.errors?.['required']"
+            >PERSAL Number is required.</small
+          >
+          <small
+            class="error"
+            *ngIf="laptopForm.get('persalNumber')?.errors?.['pattern']"
+            >PERSAL Number must be a valid integer.</small
+          >
+        </div>
+      </div>
+      <div>
+        <!--Computer Name-->
+        <label class="fluid-label" for="computerName">Comp Name</label>
+        <input id="computerName" formControlName="computerName" class="form-input" />
+        <div
+          *ngIf="
+            laptopForm.get('computerName')?.touched &&
+            laptopForm.get('computerName')?.invalid
+          "
+        >
+          <small class="error">Computer Name is required.</small>
+        </div>
+      </div>
+    </section>
+    <!--Forth Row: Serial Number, Type, Operating System and Version -->
+    <section class="form-display-grid">
+      <div>
+        <!--Serial-->
+        <label class="fluid-label" for="serialNumber">Serial Number</label>
+        <input id="serialNumber" formControlName="serialNumber" class="form-input" />
+        <div
+          *ngIf="
+            laptopForm.get('serialNumber')?.touched &&
+            laptopForm.get('serialNumber')?.invalid
+          "
+        >
+          <small class="error">Active status is required.</small>
+        </div>
+      </div>
+      <div>
+        <!--Type-->
+        <label class="fluid-label" for="type">Type</label>
+        <input id="type" formControlName="type" class="form-input" />
+        <div
+          *ngIf="
+            laptopForm.get('type')?.touched && laptopForm.get('type')?.invalid
+          "
+        >
+          <small class="error">Type is required.</small>
+        </div>
+      </div>
+      <div>
+        <!--Operating System-->
+        <label class="fluid-label" for="operatingSystem">OS</label>
+        <input id="operatingSystem" formControlName="operatingSystem" class="form-input" />
+        <div
+          *ngIf="
+            laptopForm.get('operatingSystem')?.touched &&
+            laptopForm.get('operatingSystem')?.invalid
+          "
+        >
+          <small class="error">Operating System is required.</small>
+        </div>
+      </div>
+      <div>
+        <!--Version-->
+        <label class="fluid-label" for="version">Version</label>
+        <input id="version" formControlName="version" class="form-input"/>
+        <div
+          *ngIf="
+            laptopForm.get('version')?.touched &&
+            laptopForm.get('version')?.invalid
+          "
+        >
+          <small class="error">Version is required.</small>
+        </div>
+      </div>
+    </section>
+    <!--Fifth Row: Warranty Start Date, Warranty End Date,Location and isActive status-->
+    <section class="form-display-grid">
+      <div>
+        <!--Warranty Start Date-->
+        <label class="fluid-label" for="warrantyStartDate">Warranty Start</label>
+        <input
+          id="warrantyStartDate"
+          formControlName="warrantyStartDate"
+          type="date"
+          class="form-input"
+        />
+      </div>
+      <div>
+        <!--Warranty End Date-->
+        <label class="fluid-label" for="warrantyEndDate">Warranty End</label>
+        <input
+          id="warrantyEndDate"
+          formControlName="warrantyEndDate"
+          type="date"
+          class="form-input"
+        />
+      </div>
+      <div>
+        <!--Location-->
+        <label  class="fluid-label" for="location">Location</label>
+        <input id="location" formControlName="location" class="form-input"/>
+        <div
+          *ngIf="
+            laptopForm.get('location')?.touched &&
+            laptopForm.get('location')?.invalid
+          "
+        >
+          <small class="error">Location is required.</small>
+        </div>
+      </div>
+      <div class="active">
+        <!--Active opts-->
+        <label class="fluid-label" for="active">Active</label>
+        <select id="active" formControlName="active" class="form-input">
+          <option [value]="0">-</option>
+          <option [value]="1">Yes</option>
+          <option [value]="2">No</option>
+        </select>
+        <div
+          *ngIf="
+            laptopForm.get('active')?.touched &&
+            laptopForm.get('active')?.invalid
+          "
+        >
+          <small class="error">Active status is required.</small>
+        </div>
+      </div>
+    </section>
+    <!-- Submit and Reset Buttons -->
+    <div class="form-submit">
+      <div class="submit">
+        <button
+          type="submit"
+          class="actionButton"
+        >
+          Submit
+        </button>
+      </div>
+      <div class="reset">
+        <button
+          type="reset" class="actionButton"
+          
+        >
+          Reset
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

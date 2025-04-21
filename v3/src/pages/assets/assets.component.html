@@ -1,0 +1,45 @@
+<app-header></app-header>
+<ng-template #defaultImage>
+  <img src="https://placehold.co/400?text=Your+Logo\n+goes+here" alt="Image Description" class="asset-page-image" />  
+</ng-template>
+<div class="asset-page-wrapper " >
+  <div *ngFor="let datalist of data" >
+    <app-single-slot>
+      <ng-container card-title>
+        <a [routerLink]="['/' + datalist.route]" class="stretched-link text-reset text-md">{{datalist.title}}</a>
+      </ng-container>
+      <ng-container card-content>
+        <p class="m-0 text-xs" *ngFor="let contents of datalist.content">{{contents}}</p>
+      </ng-container>
+      <ng-container card-image>
+        <ng-container *ngTemplateOutlet="defaultImage"></ng-container>
+      </ng-container>
+    </app-single-slot>
+  </div>
+</div>
+<!-- 
+<app-single-slot>
+  <ng-container card-title>
+    <a routerLink="/items" class="stretched-link text-reset text-md">Furniture tracking</a>
+  </ng-container>
+  <ng-container card-content>
+    <p class="m-0 text-xs">Office Equipment</p>
+    <p class="m-0 text-xs">Office Accessories</p>
+  </ng-container>
+  <ng-container card-image>
+    <ng-container *ngTemplateOutlet="defaultImage"></ng-container>
+  </ng-container>
+</app-single-slot>
+
+<app-single-slot>
+  <ng-container card-title>
+    <a routerLink="/administration" class="stretched-link text-reset text-md">Administration</a>
+  </ng-container>
+  <ng-container card-content>
+    <p class="m-0 text-xs">Configuration</p>
+  </ng-container>
+  <ng-container card-image>
+    <ng-container *ngTemplateOutlet="defaultImage"></ng-container>
+  </ng-container>
+</app-single-slot>      
+</div> -->

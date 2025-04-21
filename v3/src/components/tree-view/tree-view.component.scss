@@ -1,0 +1,9 @@
+.mat-tree-node {
+    display: flex;
+    color: black;
+    background: aliceblue;
+    align-items: center;
+    flex: 1;
+    word-wrap: break-word;
+    min-height: var(--mat-tree-node-min-height, 48px);
+}

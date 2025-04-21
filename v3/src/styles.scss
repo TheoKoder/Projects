@@ -1,0 +1,379 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root{
+    --primary-color: #002b5c; 
+    --secondary-color: rgb(43, 13, 209);
+    --color-title: black;
+    --hover-color: rgb(171, 171, 255);
+    --content-color:lightgray;
+    --error-color: red;
+    --main-color: #f9f9f9;
+    --box-shadow-light: 0 4px 8px rgba(19, 18, 18, 0.1);
+    --box-shadow-primary:0 2px 4px rgba(0, 0, 0, 0.1);
+      //$secondary-color: blue;
+    --top-menu-bg:#002b5c;
+    --seacrhCard-color:#f5f5f5;
+    --second-bar-color: #6390c3;
+}
+img, 
+svg,
+picture,
+video,
+canvas, audio, iframe, embed, object {
+  flex: 1 1 0%;
+  box-sizing: border-box;
+}
+
+// .form-input{
+//     color: var(--second-bar-color);
+//     width: 100%;
+//     height: 45%;
+// }
+// @media (max-width:599px) {
+//   .form-input{
+//     min-width: none;
+//     min-height: 12px;
+//     color: var(--second-bar-color);
+//   }
+
+html, body { 
+  height: 100svh;
+  width: 100dvw;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  //background-color:green;
+}
+
+//custom TailwindCSS global styling
+
+@layer components{
+  //form labels
+  // .fluid-label{
+  //    @apply text-[min(2vw,2rem)] md:text-[min(2vw,20px)] block text-black mb-1;
+  // }
+  .header-wrapper{
+    @apply mx-auto my-auto px-5 w-screen flex flex-row justify-between py-5 bg-slate-950  h-[5.5rem];
+  } 
+  //header component
+  .fluid-header{
+    @apply sm:text-wrap text-center mb-0 text-[min(5vw,70px)] lg:text-6xl max-lg:mb-6 justify-center text-white;
+  }
+  .aside1{
+    @apply w-[min(16vw,50%)] flex max-md:flex-shrink-0 h-auto object-contain;
+  }
+  .aside2{
+    @apply w-[min(16vw,50%)] flex max-md:flex-shrink-0 h-auto object-contain;
+  }
+    //Search Bar
+    .search-card-content{
+      @apply shadow-lg p-1 rounded-xl border  /*bg-slate-50*/ w-[80%] fixed;
+    }
+
+  //login form
+  .login-Form{
+    @apply flex-1 p-5 space-y-6; 
+    .login-row{
+    @apply grid grid-cols-12 gap-4 items-center;
+  }
+  .login-label{
+    @apply col-span-12 sm:col-span-4;
+  }
+  .login-input-holder{
+    @apply col-span-12 sm:col-span-8;
+  }
+  .inputter{
+   @apply h-[min(1vh,50%)] p-2 rounded /*bg-blue-50*/;
+  }
+  .login-error{
+    @apply col-span-12;
+  }
+  .error-message{
+    @apply text-red-500 text-sm font-semibold;
+  }
+  .password-row{
+    @apply grid grid-cols-12 gap-4 items-center;}
+  
+    .password-label{
+      @apply col-span-12 sm:col-span-4;
+    }
+    .password-input-holder{
+      @apply col-span-12 sm:col-span-8;
+    }
+    
+    .password-hidden{
+      @apply cursor-pointer absolute right-4 top-1/2 transform -translate-y-1/2;
+    }
+    .password-error{
+      @apply col-span-12;
+    }
+    .submit-row{
+      @apply grid grid-cols-12 gap-4 items-center;}
+  }
+
+  //Asset Card
+  .asset-card{
+    @apply bg-slate-50 w-full h-[min(100vh,10rem)] rounded-lg;
+    .asset-card-wrapper{
+      @apply grid grid-cols-2 gap-32;}
+      .asset-card-content{
+        @apply grid grid-cols-1 gap-0;
+      }
+  }
+  //Employee form
+  .emp-form{
+    @apply justify-center items-center p-6 rounded-lg text-left;
+    .form-display-grid{
+      @apply grid grid-cols-2 md:grid-cols-4 gap-4;
+    }
+    .form-submit{
+      @apply flex justify-center space-x-4 mt-6;
+    }
+  }
+
+  //Global Button
+  .actionButton{
+    @apply h-[min(1vh,5%)] px-4 py-4 rounded-lg  cursor-pointer /*bg-blue-500 text-white hover:bg-blue-600*/;
+  }
+  // // top-menu header
+  // .fluid-header{
+  //   @apply sm:text-wrap text-center mb-0 text-[min(5vw,70px)] lg:text-6xl max-lg:mb-6 justify-center text-white;
+  // }
+ 
+  form inputs
+  .form-input{
+    @apply w-[90%] p-2 rounded flex-1;
+  }
+  .asset-page-wrapper{
+    @apply grid grid-cols-1 sm:grid-cols-3 gap-4 mx-auto py-24 max-w-screen-xl;
+  }
+  .asset-page-image{
+    @apply w-16 h-16 object-scale-down;
+  }
+  .employee-details-title{
+    @apply text-center text-black text-lg text-[min(3vw,50px)] font-semibold;
+  }
+  .employee-details-wrapper{
+    @apply flex w-[full] justify-center items-center mt-0 overflow-y-hidden;
+  }
+  .employee-tablepage-wrapper{
+    @apply w-[100vw] flex flex-col justify-evenly items-start gap-32;
+  }
+  .search-bar-wrapper{
+    @apply w-[20%] h-2;
+  }
+  .table-page-wrapper{
+    @apply w-[83%] h-auto justify-center items-center;
+  }
+  .home-wrapper{
+    @apply grid grid-cols-3 gap-36;
+  }
+  .sidenav-container{
+    @apply md:max-xl:flex;
+  }
+  .toolbar-container{
+    @apply lg:hidden z-10 shadow-md bg-[--primary-color] text-white;
+  }
+  .login-page-wrapper{
+    @apply container flex flex-col justify-center items-center h-[70%];
+  }
+  .login-page-center{
+    @apply flex flex-col justify-center items-center h-dvh ;
+  }
+  .login-page-center .contents{
+    @apply flex flex-col justify-center items-center;
+  }
+  .login-page-h1{
+    @apply text-blue-600 md:max-sm:text-xl lg:flex hidden font-bold md:text-center;
+  }
+  .login-page-box-container{
+    @apply border border-gray-300 rounded-lg shadow-lg p-6 mt-4 md:mt-8 flex flex-row justify-center items-center space-x-4;
+  }
+  .log-image{
+    @apply w-[min(12vw,150px)] flex max-md:flex-shrink-0 h-auto object-contain;
+  }
+  .employee-component-title{
+    @apply text-center text-black text-lg text-[min(3vw,50px)] font-semibold;
+  }
+  .form-display-spacing{
+  @apply space-y-4;  
+  }
+  .searchbar-component-buttons{
+    @apply grid grid-cols-2 gap-2 mt-4;
+  }
+  .tree-list-content{
+    @apply cursor-pointer bg-slate-50;
+  }
+  .tree-nav{
+    @apply bg-slate-800 hover:bg-blue-500;
+  }
+  .hover-tree{
+    @apply hover:bg-blue-600;
+  }
+  // .form-input/*forms*/{
+  //   @apply bg-blue-100
+  // }
+}
+.wrapper{
+    display:flex; 
+    flex-direction:flex-row;
+    width:full;
+    height:auto;
+  }
+body {
+   margin: 0; 
+   padding: 0;
+   font-family:Roboto, "Helvetica Neue", sans-serif;
+   }
+
+  // h1 {
+  //   color: var(--color-title);
+  //   font-size: 1.5em;
+  //   font-family: 'Roboto', sans-serif;
+  //   font-weight: 700;
+  //   margin-bottom: 10%;
+  // }
+  
+  th {
+    font-size: medium;
+    font-weight: 700;
+    padding: auto;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Times New Roman', Times, cursive;
+  }
+  
+  
+  td {
+    font-size: 1.0rem;
+    font-weight: 300;
+  }
+  
+  tr {
+    align-self: center;
+    justify-content: center;
+    margin-left: 5%;
+  }
+  
+  // button {
+  
+  //   mat-list-item {
+  //     display: flex;
+  //     flex-direction: column;
+  //     font-size: .5rex;
+  //     //background-color: $primary-color;
+  //     position: absolute;
+  //     gap: .5px;
+  //     margin: auto;
+  //   }
+  
+  //   cursor: pointer;
+  //   color:white;
+  //   transition: transform 0.3s ease-in-out,
+  //   background-color 0.5s;
+  
+  //   &:active {
+  //     transform: scale(0.65);
+  //   }
+  
+  //   &:hover {
+  //     border-radius: 7px;
+  //     background-color: blue;
+  //   }
+  // }
+  
+  // mat-card-title {
+  //   color: var(--second_bar-color);
+  //   font-size: 1.5rem;
+  //   font-weight: 700;
+  //   font-family: 'Times New Roman', Times, serif;
+  // }
+  
+  // /*Mat search Cards*/
+  // .search-card {
+  //   height: 100px;
+  //   width: 400px;
+  // }
+  
+  // .inner-card mat-card-title {
+  //   font-weight: 700;
+  //   color: #000;
+  //   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  // }
+  
+  // .app-bar {
+  //   height: fit-content;
+  //   width: 400px;
+  // }
+  
+  ////////////////////////////////////////////////////
+  
+  
+  // .table {
+  //   max-width: calc(100vw - 555px);
+  // }
+  
+  // /*Add Tag and Validate Tag*/
+  // .row {
+  //   position: relative;
+  //   bottom: 100px;
+  //   width: 1455px;
+  //   left: 0;
+  //   overflow: auto;
+  //   height: 170px;
+  
+  //   .table-responsive {
+  //     position: relative;
+  //     //width: 1450px;
+  //     max-width: 15000px;
+  //     scroll-behavior: smooth;
+  //     overflow-x: scroll;
+  //   }
+  
+  //   h1 {
+  //     font-size: 3.2rex;
+  //   }
+  // }
+  
+  // /*Tables in Tagging and Laptoplist*/
+  // .row1 {
+  //   position: relative;
+  //   margin: 0;
+  //   left: 10px;
+  //   bottom: -2%;
+  //   overflow: auto;
+  //   //height: 370px;
+  //   //width: 1390px; 
+  
+  //   .table-responsive {
+  //     position: relative;
+  //     //width: 1450px;
+  //     max-width: 15000px;
+  //     scroll-behavior: smooth;
+  //     overflow-x: scroll;
+  //   }
+  
+  //   h1 {
+  //     font-size: 3.2rex;
+  //   }
+  // }
+  
+  // // .container{
+  // //   margin: 0;
+  // //   padding: 0;
+  // //   position: relative;
+  // // }
+  // /*Small buttons inside Tables and In general*/
+  // .btn1 {
+  //   //border: 0 2 solid red;
+  //   color: white;
+  
+  //   button {
+  //     background: steelblue;
+  //   }
+  // }
+
+  

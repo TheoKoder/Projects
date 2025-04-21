@@ -1,0 +1,20 @@
+<!-- <mat-card class="">
+  <mat-card-content class=" grid grid-cols-2 fluid-label">
+    <ng-content></ng-content>
+  </mat-card-content>
+</mat-card> -->
+<mat-card >
+  <mat-card-content class="asset-card"> 
+    <div class="asset-card-wrapper">
+      <div class="asset-card-content">
+        <h2 class="fluid-label">
+          <ng-content select="[card-title]"></ng-content>
+        </h2>
+        <ng-content select="[card-content]"></ng-content>
+      </div>
+      <div>
+        <ng-content select="[card-image]"></ng-content>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card> 

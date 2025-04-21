@@ -1,0 +1,47 @@
+////////////////////////////////////////////////////////////////////////////////
+/*Mat tags*/
+mat-toolbar {
+    //background-color: #eeee;
+   // --tw-bg-opacity: 1;
+    background-color: white /* #172554 */;
+    // --tw-bg-opacity: 1;
+    // background-color: rgb(2 6 23 / var(--tw-bg-opacity, 1)) /* #020617 */;
+    width: max-content;
+    z-index: 10;
+    height: 3%;
+    margin-bottom: 0px;
+    }
+    
+    mat-sidenav {
+      width: 10%; 
+      min-width: 15rem; /* Ensure it does not become too small */
+      max-width: 25rem; /* Limit max size */
+      // --tw-bg-opacity: 1;
+      // background-color: rgb(2 6 23 / var(--tw-bg-opacity, 1)) /* #020617 */;
+      border-radius: 10px;
+      padding: 20px;
+      overflow: auto;
+    }
+
+    .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+      background-color:#f3f3f3;
+  }
+  
+    
+    .content {
+      flex-grow: 1; /* Content takes the remaining container*/
+      height: calc(100vh - 2.5rem);
+      background-color: var(--main-color);
+      padding: 2rem;
+      border-radius: 0px;
+      overflow-y: scrollable;
+    }
+    
+    mat-sidenav-container {
+      display: flex;
+      height: calc(100vh - 3.5rem);
+      overflow: hidden;
+    }
+    //////////////////////////////////////////////////////////////////////////////////////////////
+  
+  

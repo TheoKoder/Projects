@@ -1,0 +1,16 @@
+<mat-card class="container ">
+    <section class="search-card-content">
+      <div class=" grid grid-row-2"  >
+        <div class="w-full rounded-lg p-2">
+          <div >
+            <label class="text-center">Serial Number :</label>
+            <input matInput (ngModel)="SERIAL_NUMBER" >
+          </div>
+        </div>
+      </div>
+      <div class="searchbar-component-buttons">
+        <button   (click)="performSearch()">Search</button>
+        <button   (click)="resetSearch()">Reset</button>
+      </div>
+    </section>
+  </mat-card>

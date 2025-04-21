@@ -1,0 +1,30 @@
+.chart-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
+  gap: 25px;
+  width: 100%;
+}
+
+app-bar-chart,
+app-line-chart,
+app-bar-chart2,
+app-bar-chart3 {
+  padding: auto;
+  display: block;
+  width: 380px;
+  justify-content: center;
+  align-items: center;
+  height: -moz-min-content;
+  height: min-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  box-shadow: 0 8px 16px rgba(20, 50, 80, 0.3);
+  border: 1500px;
+  border-radius: 3%;
+}/*# sourceMappingURL=app.component.css.map */

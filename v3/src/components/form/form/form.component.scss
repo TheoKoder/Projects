@@ -1,0 +1,107 @@
+// /* Form styling */
+//   .form-grid {
+//     display: flex;
+//     flex: 1 1 0%;
+//     //position;
+//     flex-direction: column;
+//     gap: 1.5rem;
+//     max-height: 70%;
+//     overflow: hidden;
+//   }
+  
+//   /* Form group styling */
+//   .form-grid > div {
+//     display: flex;
+//     flex: 1 1 0%;
+//     flex-direction: column;
+//     gap: 0.5rem;
+//   }
+  
+//   /* Input styling */
+//   input {
+//     padding: 0.5rem;
+//     border: 1px solid #8ec4da;
+//     border-radius: 4px;
+//     flex: 1;
+//     font-size: medium;
+//     width: 50%;
+//   }
+  
+//   /* Label styling */
+//   label {
+//     color: black;
+//     flex: 1;
+//     font-weight: 500;
+//     min-width: 200px;
+//   }
+  
+//   /* Error message styling */
+//   .error {
+//     color: var(--error-color);
+//     font-weight: 100;
+//     font-size: 0.875rem;
+//   }
+  
+//   /* Button styling */
+//   button {
+//     padding: 0.5rem 1rem;
+//     border-radius: 4px;
+//     font-weight: 500;
+//     cursor: pointer;
+//     transition: all 0.2s;
+//   }
+  
+//   button[type="submit"] {
+//     background-color:var(--secondary-color);
+//     color: white;
+//     border: none;
+//   }
+  
+//   button[type="submit"]:hover {
+//     background-color: #2563eb;
+//   }
+  
+//   button[type="reset"] {
+//     background-color:var(--error-color);
+//     color: white;
+//     border: none;
+//   }
+  
+//   button[type="reset"]:hover {
+//     background-color: var(--error-color);
+//   }
+  
+  /* Mobile styles (<=600px) */
+  @media (max-width: 600px) {
+    .form-grid {
+      overflow-y: auto;
+      padding-right: 1rem;
+    }
+  
+    .form-grid > div {
+      flex-direction: column;
+      flex: 1 1 0%;
+      gap: 0.5rem;
+    }
+  
+    label {
+      margin-bottom: 0.25rem;
+    }
+  }
+  
+  /* Desktop styles (>=790px) */
+  @media (min-width: 790px) {
+    .form-grid > div {
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    input {
+      flex: 1 1 0%;
+    }
+  
+    /* Button container styling */
+    .submit, .reset {
+      justify-content: flex-start;
+    }
+  }

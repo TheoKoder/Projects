@@ -1,0 +1,62 @@
+<form class="login container w-full h-full" (ngSubmit)="onSubmit()" formGroup="loginForm">
+  <section fxLayout="row" fxLayoutAlign="center center" header="header" class="wrapper">
+    <!-- Left: Login Form -->
+    <div class="login-Form">
+      <!-- Login Row -->
+      <div class="login-row">
+        <!-- Label -->
+        <div class="login-label">
+          <mat-label class="fluid-label">Login:</mat-label>
+        </div>
+        <!-- Input -->
+        <div class="login-input-holder">
+          <input pInputText type="text" autocomplete="username" formControlName="login"
+                 class="inputter" name="login">
+        </div>
+        <!-- Error Message -->
+        <div class="login-error">
+          <div *ngIf="loginForm.controls['login'].invalid && loginForm.controls['login'].dirty"
+               class="error-message">
+            Login is required
+          </div>
+        </div>
+      </div>
+
+      <!-- Password Row -->
+      <div class="password-row">
+        <!-- Label -->
+        <div class="password-label">
+          <mat-label class="fluid-label">Password:</mat-label>
+        </div>
+        <!-- Input with Icon -->
+        <div class="password-input-holder">
+          <input  pInputText [type]="hide ? 'password' : 'text'" autocomplete="current-password" 
+                 formControlName="password" class="inputter" name="password">
+          <mat-icon class="cursor-pointer relative   top-1/2 transform translate-y-1/3 "
+                    (click)="hide = !hide">
+            {{ hide ? 'visibility_off' : 'visibility' }}
+          </mat-icon>
+        </div>
+        <!-- Error Message -->
+        <div class="password-error">
+          <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].dirty"
+               class="error-message">
+            Password is required
+          </div>
+        </div>
+      </div>
+
+      <!-- Submit Row -->
+      <div class="submit-row">
+        <div class="col-span-2"></div>
+        <div class="col-span-8">
+          <button pButton type="submit" label="Submit" [disabled]="!loginForm.valid"
+                  class="actionButton">
+            <span [routerLink]="['/asset']" class="">Submit</span>
+          </button>
+        </div>
+        <div class="col-span-2"></div>
+      </div>
+    </div>
+  </section>
+</form>
