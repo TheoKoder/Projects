@@ -51,10 +51,10 @@ html, body {
 //custom TailwindCSS global styling
 
 @layer components{
-  //form labels
-  // .fluid-label{
-  //    @apply text-[min(2vw,2rem)] md:text-[min(2vw,20px)] block text-black mb-1;
-  // }
+  form labels
+  .fluid-label{
+     @apply text-[min(2vw,2rem)] md:text-[min(2vw,20px)] block text-black mb-1;
+  }
   .header-wrapper{
     @apply mx-auto my-auto px-5 w-screen flex flex-row justify-between py-5 bg-slate-950  h-[5.5rem];
   } 
@@ -70,7 +70,7 @@ html, body {
   }
     //Search Bar
     .search-card-content{
-      @apply shadow-lg p-1 rounded-xl border  /*bg-slate-50*/ w-[80%] fixed;
+      @apply shadow-lg p-1 rounded-xl border  /*bg-slate-50*/ w-[80%] relative;
     }
 
   //login form
@@ -136,12 +136,12 @@ html, body {
 
   //Global Button
   .actionButton{
-    @apply h-[min(1vh,5%)] px-4 py-4 rounded-lg  cursor-pointer /*bg-blue-500 text-white hover:bg-blue-600*/;
+    @apply h-[min(1vh,5%)] px-4 py-4 rounded-lg  cursor-pointer bg-blue-500 text-white hover:bg-blue-600;
   }
-  // // top-menu header
-  // .fluid-header{
-  //   @apply sm:text-wrap text-center mb-0 text-[min(5vw,70px)] lg:text-6xl max-lg:mb-6 justify-center text-white;
-  // }
+  // top-menu header
+  .fluid-header{
+    @apply sm:text-wrap text-center mb-0 text-[min(5vw,70px)] lg:text-6xl max-lg:mb-6 justify-center text-white;
+  }
  
   form inputs
   .form-input{
@@ -202,7 +202,7 @@ html, body {
   @apply space-y-4;  
   }
   .searchbar-component-buttons{
-    @apply grid grid-cols-2 gap-2 mt-4;
+    @apply grid grid-cols-2 gap-2 mt-1 h-full;
   }
   .tree-list-content{
     @apply cursor-pointer bg-slate-50;
@@ -213,9 +213,9 @@ html, body {
   .hover-tree{
     @apply hover:bg-blue-600;
   }
-  // .form-input/*forms*/{
-  //   @apply bg-blue-100
-  // }
+  .form-input/*forms*/{
+    @apply bg-blue-100
+  }
 }
 .wrapper{
     display:flex; 
